@@ -91,7 +91,7 @@ def byte_to_human(len_in_byte):
         return "%.2f GB" % in_gb
 
 
-if __name__ == '__main__':
+def main():
     # Getting webstore URL from User
     parser = argparse.ArgumentParser(description='Download CRX file from Google Chrome Webstore.')
     parser.add_argument('-u', '--url', help='URL of the chrome store', required=True)
@@ -99,3 +99,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     download(args.url, args.file)
+
+
+if __name__ == '__main__':
+    main()
