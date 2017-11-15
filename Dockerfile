@@ -2,7 +2,10 @@ FROM jaymoulin/rpi-python:alpine
 
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
-RUN pip3 install chrome-webstore-download
+RUN apk update && \
+    apk add g++ --virtual .build-deps && \
+    pip3 install chrome-webstore-download && \
+    apk del g++ --purge .build-deps
 
 ADD ./entrypoint.sh /usr/bin/entrypoint
 

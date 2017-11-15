@@ -3,8 +3,7 @@
 
 from setuptools import setup, find_packages
 
-__version__ = '0.1.0'
-
+__version__ = '0.1.1'
 
 setup(
     name='chrome_webstore_download',
@@ -27,6 +26,7 @@ setup(
         "Topic :: Software Development",
         "Intended Audience :: Developers",
     ],
+    install_requires=["requests"],
     entry_points={
         'console_scripts': [
             'chrome-webstore-download = chrome_webstore_download.download:main',
