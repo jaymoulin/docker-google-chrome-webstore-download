@@ -8,6 +8,10 @@ Google Chrome Webstore Downloader - Python Module
 .. image:: https://img.shields.io/pypi/v/chrome_webstore_download.svg
     :alt: PyPI version
     :target: https://pypi.org/project/chrome_webstore_download/
+.. image:: https://img.shields.io/docker/pulls/jaymoulin/google-chrome-webstore-download.svg
+    :target: https://hub.docker.com/r/jaymoulin/google-chrome-webstore-download/
+.. image:: https://img.shields.io/docker/stars/jaymoulin/google-chrome-webstore-download.svg
+    :target: https://hub.docker.com/r/jaymoulin/google-chrome-webstore-download/
 .. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png
     :alt: Bitcoin donation
     :target: https://m.freewallet.org/id/374ad82e/btc
