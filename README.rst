@@ -1,19 +1,13 @@
-====================================
-Google Music Manager - Python Daemon
-====================================
+=================================================
+Google Chrome Webstore Downloader - Python Module
+=================================================
 
-.. image:: https://img.shields.io/github/release/jaymoulin/google-music-manager.svg
+.. image:: https://img.shields.io/github/release/jaymoulin/docker-google-chrome-webstore-download.svg
     :alt: latest release
-    :target: http://github.com/jaymoulin/google-music-manager/releases
-.. image:: https://img.shields.io/pypi/v/google-music-manager-auth.svg
+    :target: http://github.com/jaymoulin/docker-google-chrome-webstore-download/releases
+.. image:: https://img.shields.io/pypi/v/chrome_webstore_download.svg
     :alt: PyPI version
-    :target: https://pypi.org/project/google-music-manager-auth/
-.. image:: https://img.shields.io/pypi/v/google-music-manager-downloader.svg
-    :alt: PyPI version
-    :target: https://pypi.org/project/google-music-manager-downloader/
-.. image:: https://img.shields.io/pypi/v/google-music-manager-uploader.svg
-    :alt: PyPI version
-    :target: https://pypi.org/project/google-music-manager-uploader/
+    :target: https://pypi.org/project/chrome_webstore_download/
 .. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/btc.png
     :alt: Bitcoin donation
     :target: https://m.freewallet.org/id/374ad82e/btc
@@ -23,89 +17,42 @@ Google Music Manager - Python Daemon
 .. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ppl.png
     :alt: PayPal donation
     :target: https://www.paypal.me/jaymoulin
-.. image:: https://beerpay.io/jaymoulin/google-music-manager/badge.svg
+.. image:: https://beerpay.io/jaymoulin/docker-google-chrome-webstore-download/badge.svg
     :alt: Beerpay donation
-    :target: https://beerpay.io/jaymoulin/googl-music-manager
+    :target: https://beerpay.io/jaymoulin/docker-google-chrome-webstore-download
 
 
-This program will replace former Google MusicManager to upload your music library to Google Music
+This program will replace download Google Chrome Webstore extension CRX files to you computer
 
-This work is based upon `Simon Weber's Google Music API <https://github.com/simon-weber/gmusicapi>`_.
+This work is based upon `arulrajnet's work <https://gist.githubusercontent.com/arulrajnet/2424bc1ffc40324f3786/raw/dc6e7e5f0edfe05e5eae0a65724c654cba2b9d70/ChromeAppDownloader.py>`_.
 
 Installation
 ------------
 
-Avconv is needed to convert some of your files due to Google's MP3 constraint
-also, this program needs `watchdog`, `gmusicapi`, `netifaces` and `bs4` Python libraries to work. 
+.. code::
+
+    pip3 install chrome_webstore_download
+
+
+Once installed, You will be able to download CRX files from webstore via the `chrome-webstore-download` command
 
 .. code::
 
-    apt-get install python3-pip libav-tools build-essential
-    pip3 install watchdog gmusicapi bs4 netifaces
+    usage: chrome-webstore-download [-h] -u URL [-f FILE]
 
-
-Once installed, You have to authenticate to Google Music via the `google-music-auth` command
-
-.. code::
-
-    # Usage google-music-auth [path_to_oauth_cred_file=~/oauth]
-
-
-If first parameter is not defined, the script will try to store/load your oauth credentials through the `~/oauth` file.
-
-Then follow prompted instructions.
-
-You will be asked to go to a Google URL to allow the connection:
-
-.. code::
-
-    Visit the following url:
-        https://accounts.google.com/o/oauth2/v2/auth?client_id=XXXXXXXXXXX.apps.googleusercontent.com&access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fmusicmanager&response_type=code&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
-    Follow the prompts, then paste the auth code here and hit enter:
-
-Usage
------
-
-Uploader
-~~~~~~~~
-
-This program will scan a given directory for new elements to upload them to Google Music.
-First, launch the daemon to watch a directory new inputs.
-
-It will *NOT* upload already existing files, *ONLY* new files while the daemon is running. (Please contribute if you want this to change)
-
-.. code::
-
-    usage: google-music-upload [-h] [--directory DIRECTORY] [--oauth OAUTH] [-r]
-                              [--uploader_id UPLOADER_ID]
+    Download CRX file from Google Chrome Webstore.
 
     optional arguments:
       -h, --help            show this help message and exit
-      --directory DIRECTORY, -d DIRECTORY
-                            Music Folder to upload from (default: .)
-      --oauth OAUTH, -a OAUTH
-                            Path to oauth file (default: ~/oauth)
-      -r, --remove          Remove files if present (default: False)
-      --uploader_id UPLOADER_ID, -u UPLOADER_ID
-                            Uploader identification (should be an uppercase MAC
-                            address) (default: <current eth0 MAC address>)
+      -u URL, --url URL     URL of the chrome store
+      -f FILE, --file FILE  Path to download CRX
 
-Downloader
-~~~~~~~~~~
-
-This program will download all your uploaded musics from Google Music to a given directory.
+Example
+~~~~~~~
 
 .. code::
 
-    usage: google-music-download [-h] [--directory DIRECTORY] [--oauth OAUTH]
-
-    optional arguments:
-      -h, --help            show this help message and exit
-      --directory DIRECTORY, -d DIRECTORY
-                            Music Folder to download to (default: .)
-      --oauth OAUTH, -a OAUTH
-                            Path to oauth file (default: ~/oauth)
-
+    chrome-webstore-download -u https://chrome.google.com/webstore/detail/bandcamp-downloader/nmoobgpmablfmgchfjnhkbloaobiogeh
 
 =====
 About
@@ -114,8 +61,7 @@ About
 Requirements
 ------------
 
-Google Music Uploader works with Python 3 or above.
-It requires `Simon Weber's Google Music API <https://github.com/simon-weber/gmusicapi>`_ and `Watchdog <https://pypi.python.org/pypi/watchdog>`_.
+Google Chrome Webstore Downloader works with Python 3 or above.
 
 Submitting bugs and feature requests
 ------------------------------------
@@ -130,4 +76,4 @@ Jay MOULIN jaymoulin@gmail.com See also the list of contributors which participa
 License
 -------
 
-Google Music Uploader is licensed under the MIT License
+Google Chrome Webstore Downloader is licensed under the MIT License
