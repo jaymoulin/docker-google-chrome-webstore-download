@@ -1,6 +1,10 @@
-FROM python:alpine
+FROM python:alpine3.6 as builder
 
-MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
+COPY qemu-*-static /usr/bin/
+
+FROM builder
+
+LABEL MAINTAINER="Jay MOULIN <jaymoulin@gmail.com>"
 
 RUN apk update && \
     apk add g++ --virtual .build-deps && \

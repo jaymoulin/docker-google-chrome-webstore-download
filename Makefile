@@ -1,6 +1,6 @@
 VERSION ?= 0.1.0
 FULLVERSION ?= ${VERSION}
-archs = s390x arm32v7 amd64 ppc64le i386 arm64v8 arm32v6 arm32v5
+archs = s390x arm32v7 amd64 i386 arm64v8 arm32v6
 
 .PHONY: all build publish latest
 all: build publish
