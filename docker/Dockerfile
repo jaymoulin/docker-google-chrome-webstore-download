@@ -1,4 +1,4 @@
-FROM jaymoulin/rpi-python:alpine
+FROM python:alpine
 
 MAINTAINER Jay MOULIN <jaymoulin@gmail.com>
 
