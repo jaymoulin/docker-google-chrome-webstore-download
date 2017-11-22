@@ -3,3 +3,4 @@
 qemu-*-static
 dist
 *.egg-info
+build
