@@ -15,7 +15,7 @@ manifests:
   -
     image: jaymoulin/google-chrome-webstore-download:$VERSION-amd64
     platform:
-      architecture: arm64
+      architecture: amd64
       os: linux
   -
     image: jaymoulin/google-chrome-webstore-download:$VERSION-i386
