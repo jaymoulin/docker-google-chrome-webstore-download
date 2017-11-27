@@ -21,10 +21,6 @@ Google Chrome Webstore Downloader - Python Module
 .. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ppl.png
     :alt: PayPal donation
     :target: https://www.paypal.me/jaymoulin
-.. image:: https://beerpay.io/jaymoulin/docker-google-chrome-webstore-download/badge.svg
-    :alt: Beerpay donation
-    :target: https://beerpay.io/jaymoulin/docker-google-chrome-webstore-download
-
 
 This program will replace download Google Chrome Webstore extension CRX files to you computer
 
@@ -57,6 +53,32 @@ Example
 .. code::
 
     chrome-webstore-download -u https://chrome.google.com/webstore/detail/bandcamp-downloader/nmoobgpmablfmgchfjnhkbloaobiogeh
+
+============
+Docker Usage
+============
+
+.. code::
+
+    docker run --rm -ti -v `pwd`:/root jaymoulin/google-chrome-webstore-download <option>
+
+.. code::
+
+    usage: jaymoulin/google-chrome-webstore-download [-h] -u URL [-f FILE]
+
+    Download CRX file from Google Chrome Webstore.
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -u URL, --url URL     URL of the chrome store
+      -f FILE, --file FILE  Path to download CRX
+
+Example
+-------
+
+.. code::
+
+    docker run --rm -ti -v `pwd`:/root jaymoulin/google-chrome-webstore-download -u https://chrome.google.com/webstore/detail/bandcamp-downloader/nmoobgpmablfmgchfjnhkbloaobiogeh
 
 =====
 About
