@@ -1,4 +1,5 @@
 VERSION ?= 0.1.3
+CACHE ?= --no-cache=1
 FULLVERSION ?= ${VERSION}
 archs = s390x amd64 i386 arm64v8 arm32v6
 
@@ -9,7 +10,7 @@ build-docker:
 	cp /usr/bin/qemu-*-static .
 	$(foreach arch,$(archs), \
 		cat docker/Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile .;\
+		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish-docker:
 	docker push jaymoulin/google-chrome-webstore-download
