@@ -22,7 +22,7 @@ Google Chrome Webstore Downloader - Python Module
     :alt: PayPal donation
     :target: https://www.paypal.me/jaymoulin
 
-This program will replace download Google Chrome Webstore extension CRX files to you computer
+This program will download Google Chrome Webstore extension CRX files to you computer
 
 This work is based upon `arulrajnet's work <https://gist.githubusercontent.com/arulrajnet/2424bc1ffc40324f3786/raw/dc6e7e5f0edfe05e5eae0a65724c654cba2b9d70/ChromeAppDownloader.py>`_.
 
