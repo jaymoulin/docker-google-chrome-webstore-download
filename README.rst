@@ -1,3 +1,7 @@
+.. image:: http://github.com/jaymoulin/docker-google-chrome-webstore-download/raw/master/logo.png
+    :alt: logo
+    :target: http://github.com/jaymoulin/docker-google-chrome-webstore-download
+
 =================================================
 Google Chrome Webstore Downloader - Python Module
 =================================================
