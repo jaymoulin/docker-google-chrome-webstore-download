@@ -1,4 +1,4 @@
-.. image:: http://github.com/jaymoulin/docker-google-chrome-webstore-download/raw/master/logo.png
+.. image:: https://raw.githubusercontent.com/jaymoulin/docker-google-chrome-webstore-download/master/logo.png
     :alt: logo
     :target: http://github.com/jaymoulin/docker-google-chrome-webstore-download
 
