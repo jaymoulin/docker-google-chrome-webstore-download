@@ -16,9 +16,6 @@ Google Chrome Webstore Downloader - Python Module
     :target: https://hub.docker.com/r/jaymoulin/google-chrome-webstore-download/
 .. image:: https://img.shields.io/docker/stars/jaymoulin/google-chrome-webstore-download.svg
     :target: https://hub.docker.com/r/jaymoulin/google-chrome-webstore-download/
-.. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/utip.png
-    :alt: Watch Ads
-    :target: https://utip.io/femtopixel
 .. image:: https://github.com/jaymoulin/jaymoulin.github.io/raw/master/ppl.png
     :alt: PayPal donation
     :target: https://www.paypal.me/jaymoulin
@@ -27,7 +24,7 @@ Google Chrome Webstore Downloader - Python Module
     :target: https://www.buymeacoffee.com/3Yu8ajd7W
 .. image:: https://badgen.net/badge/become/a%20patron/F96854
     :alt: Become a Patron
-    :target: https://patreon.com/femtopixel
+    :target: https://patreon.com/jaymoulin
 
 This program will download Google Chrome Webstore extension CRX files to you computer
 
