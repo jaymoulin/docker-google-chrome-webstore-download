@@ -26,7 +26,9 @@ Google Chrome Webstore Downloader - Python Module
     :alt: Become a Patron
     :target: https://patreon.com/jaymoulin
 
-This program will download Google Chrome Webstore extension CRX files to you computer
+(This product is available under a free and permissive license, but needs financial support to sustain its continued improvements. In addition to maintenance and stability there are many desirable features yet to be added.)
+
+(This product is available under a free and permissive license, but needs financial support to sustain its continued improvements. In addition to maintenance and stability there are many desirable features yet to be added.)This program will download Google Chrome Webstore extension CRX files to you computer
 
 This work is based upon `arulrajnet's work <https://gist.githubusercontent.com/arulrajnet/2424bc1ffc40324f3786/raw/dc6e7e5f0edfe05e5eae0a65724c654cba2b9d70/ChromeAppDownloader.py>`_.
 
