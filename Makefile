@@ -13,7 +13,7 @@ build-docker:
 		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish-docker:
-	docker push jaymoulin/google-chrome-webstore-download
+	docker push jaymoulin/google-chrome-webstore-download -a
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml
