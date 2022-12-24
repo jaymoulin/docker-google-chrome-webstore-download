@@ -64,6 +64,8 @@ Example
 Docker Usage
 ============
 
+Please note that this package is also hosted on Github Container Registry, just add `ghcr.io/` before the image name (`docker pull ghcr.io/jaymoulin/google-chrome-webstore-download` instead of `jaymoulin/google-chrome-webstore-download`)
+
 .. code::
 
     docker run --rm -ti -v `pwd`:/root jaymoulin/google-chrome-webstore-download <option>

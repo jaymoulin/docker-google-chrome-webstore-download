@@ -10,15 +10,19 @@ build-docker:
 	cp /usr/bin/qemu-*-static .
 	$(foreach arch,$(archs), \
 		cat docker/Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
+		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -t ghcr.io/jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
 	)
 publish-docker:
 	docker push jaymoulin/google-chrome-webstore-download -a
+	docker push ghcr.io/jaymoulin/google-chrome-webstore-download -a
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml
 	manifest-tool push from-spec manifest.yaml
-latest: build-docker
+	cat manifest.yaml | sed "s/jaymoulin/ghcr.io\/jaymoulin/g" > manifest2.yaml
+	mv manifest2.yaml manifest.yaml
+	manifest-tool push from-spec manifest.yaml
+latest:
 	FULLVERSION=latest VERSION=${VERSION} make publish-docker 
 checktest: install
 	twine upload -r testpypi dist/*
