@@ -11,7 +11,6 @@ setup(
     version=__version__,
     packages=find_packages(),
     author="Jay MOULIN",
-    author_email="jay@femtopixel.com",
     description="Google Chrome Webstore Downloader",
     long_description=open('README.rst').read(),
     include_package_data=True,
