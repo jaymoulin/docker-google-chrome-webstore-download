@@ -1,29 +1,13 @@
 VERSION ?= 0.1.3
 CACHE ?= --no-cache=1
-FULLVERSION ?= ${VERSION}
-archs ?= s390x amd64 i386 arm64v8 arm32v6
 
-.PHONY: default all build-docker publish-docker latest install clean
+.PHONY: default all build-docker publish-docker install clean
 default: checktest
-all: publish build-docker publish-docker latest
+all: build-docker publish-docker
 build-docker:
-	cp /usr/bin/qemu-*-static .
-	$(foreach arch,$(archs), \
-		cat docker/Dockerfile | sed "s/FROM python:alpine/FROM ${arch}\/python:alpine/g" > .Dockerfile; \
-		docker build -t jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -t ghcr.io/jaymoulin/google-chrome-webstore-download:${VERSION}-$(arch) -f .Dockerfile ${CACHE} .;\
-	)
+	docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64,linux/arm/v6,linux/s390x,linux/386 ${PUSH} --build-arg VERSION=${VERSION} --tag jaymoulin/google-chrome-webstore-download --tag jaymoulin/google-chrome-webstore-download:${VERSION} ${CACHE} -f docker/Dockerfile .
 publish-docker:
-	docker push jaymoulin/google-chrome-webstore-download -a
-	docker push ghcr.io/jaymoulin/google-chrome-webstore-download -a
-	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
-	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
-	mv manifest2.yaml manifest.yaml
-	manifest-tool push from-spec manifest.yaml
-	cat manifest.yaml | sed "s/jaymoulin/ghcr.io\/jaymoulin/g" > manifest2.yaml
-	mv manifest2.yaml manifest.yaml
-	manifest-tool push from-spec manifest.yaml
-latest:
-	FULLVERSION=latest VERSION=${VERSION} make publish-docker 
+	PUSH=--push CACHE= make build
 checktest: install
 	twine upload -r testpypi dist/*
 publish: install
